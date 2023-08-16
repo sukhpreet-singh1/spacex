@@ -8,7 +8,21 @@ function Pagination({
 }) {
   return (
     <div className="py-2">
-      <div></div>
+      <div>
+        <p className="text-sm text-gray-700">
+          Showing
+          <span className="font-medium">{currentPage * postsPerPage - 6}</span>
+          to
+          <span className="font-medium">
+            {currentPage * postsPerPage < totalPosts
+              ? currentPage * postsPerPage
+              : totalPosts}
+          </span>
+          of
+          <span className="font-medium"> {totalPosts} </span>
+          results
+        </p>
+      </div>
       <nav className="block"></nav>
       <div>
         <nav
@@ -19,7 +33,9 @@ function Pagination({
             onClick={() => {
               paginateBack()
             }}
-            className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+            className={`relative ${
+              currentPage * postsPerPage - 6 == 0 ? 'pointer-events-none' : ''
+            } inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50`}
           >
             <span>Previous</span>
           </li>
@@ -28,7 +44,9 @@ function Pagination({
             onClick={(event) => {
               paginateFront()
             }}
-            className="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+            className={`relative ${
+              currentPage * postsPerPage >= totalPosts ? 'pointer-events-none' : ''
+            } inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50`}
           >
             <span>Next</span>
           </li>

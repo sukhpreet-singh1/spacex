@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav
       data-testid="navbar"
-      className="flex items-center h-24 bg-transparent fixed w-screen justify-between flex-wrap p-6"
+      className="flex items-center h-24 bg-transparent absolute w-screen justify-between flex-wrap p-6"
     >
       <div className="w-6/12"></div>
       <div className="block md:hidden">

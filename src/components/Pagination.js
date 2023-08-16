@@ -10,16 +10,21 @@ function Pagination({
     <div className="py-2">
       <div>
         <p className="text-sm text-gray-700">
-          Showing
+          Showing {` `}
           <span className="font-medium">{currentPage * postsPerPage - 6}</span>
+          {` `}
           to
+          {` `}
           <span className="font-medium">
             {currentPage * postsPerPage < totalPosts
               ? currentPage * postsPerPage
               : totalPosts}
           </span>
+          {` `}
           of
+          {` `}
           <span className="font-medium"> {totalPosts} </span>
+          {` `}
           results
         </p>
       </div>
@@ -34,7 +39,7 @@ function Pagination({
               paginateBack()
             }}
             className={`relative ${
-              currentPage * postsPerPage - 6 == 0 ? 'pointer-events-none' : ''
+              currentPage * postsPerPage - 6 === 0 ? 'pointer-events-none' : ''
             } inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50`}
           >
             <span>Previous</span>

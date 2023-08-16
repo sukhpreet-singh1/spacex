@@ -11,10 +11,15 @@ const Capsules = () => {
   let data = useSelector((state) => state.capsulesData.data)
   const isSearchEnabled = useSelector((state) => state.capsulesData.searchEnabled)
   const searchData = useSelector((state) => state.capsulesData.searchData)
-
+  const filterData = useSelector((state) => state.capsulesData.filterData)
+  const isFilterEnabled = useSelector((state) => state.capsulesData.filterEnabled)
   if (isSearchEnabled) {
     data = searchData
   }
+  if (isFilterEnabled) {
+    data = filterData
+  }
+
   const [currentPage, setCurrentPage] = useState(1)
   const [postsPerPage] = useState(6)
 

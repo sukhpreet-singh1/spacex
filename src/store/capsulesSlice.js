@@ -17,15 +17,17 @@ const capsulesSlice = createSlice({
     },
     filterCapsules: (state, action) => {
       state.filterAttributes = action.payload
-      const matchingObjects = state.data.filter((obj) => {
-        return state.attributesToMatch.every((attr) => {
-          const attrValue = obj[attr]
-          const matchingValue =
-            state.filterAttributes[state.attributesToMatch.indexOf(attr)]
-          return attrValue === matchingValue
+      if (state.searchEnabled) {
+        state.data = state.searchData
+      }
+
+      if (state.filterAttributes.length > 0) {
+        state.data = state.data.filter((item) => {
+          if (state.filterAttributes.includes(item.type)) {
+            return item
+          }
         })
-      })
-      state.data = matchingObjects
+      }
     },
     searchCapsules: (state, action) => {
       const filter = action.payload

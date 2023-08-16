@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from './Button'
 const Hero = () => {
   return (
     <div className="h-screen  bg-[url('./Images/background1.jpg')] bg-no-repeat bg-cover bg-center flex flex-col  ">
@@ -10,10 +9,6 @@ const Hero = () => {
             Mission To Mars
           </h1>
         </span>
-      </div>
-
-      <div className="flex items-center justify-center pb-6 ">
-        <Button text="Dicover" />
       </div>
     </div>
   )

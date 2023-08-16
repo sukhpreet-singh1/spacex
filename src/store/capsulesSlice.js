@@ -8,7 +8,7 @@ const initialState = {
   searchEnabled: false,
 }
 
-const rocketSlice = createSlice({
+const capsulesSlice = createSlice({
   name: 'loadData',
   initialState,
   reducers: {
@@ -43,5 +43,5 @@ const rocketSlice = createSlice({
 })
 
 export const { dataLoad, filterCapsules, searchCapsules, enableSearch, disableSearch } =
-  rocketSlice.actions
-export default rocketSlice.reducer
+  capsulesSlice.actions
+export default capsulesSlice.reducer

@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { dataLoad } from '../store/rocketSlice'
+import { dataLoad } from '../store/capsulesSlice'
 import Search from './Search'
 import axios from 'axios'
 import Card from './Card'
 import Pagination from './Pagination'
 import Filter from './Filter'
-const Rockets = () => {
+const Capsules = () => {
   const dispatch = useDispatch()
-  let data = useSelector((state) => state.rocketData.data)
-  const isSearchEnabled = useSelector((state) => state.rocketData.searchEnabled)
-  const searchData = useSelector((state) => state.rocketData.searchData)
+  let data = useSelector((state) => state.capsulesData.data)
+  const isSearchEnabled = useSelector((state) => state.capsulesData.searchEnabled)
+  const searchData = useSelector((state) => state.capsulesData.searchData)
 
   if (isSearchEnabled) {
     data = searchData
@@ -33,7 +33,7 @@ const Rockets = () => {
   }, [])
 
   return (
-    <div data-testid="rocket" className="flex h-screen w-full flex-col sm:flex-row">
+    <div className="flex h-screen w-full flex-col sm:flex-row">
       <div className="flex border sm:pt-8 flex-col items-center w-full sm:w-1/4">
         {isSearchEnabled ? <Filter data={searchData} /> : <Filter data={data} />}
         <div className="flex flex-row w-full justify-center px-5 items-center">
@@ -62,4 +62,4 @@ const Rockets = () => {
   )
 }
 
-export default Rockets
+export default Capsules

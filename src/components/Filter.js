@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Multiselect from './Multiselect'
 import { useDispatch } from 'react-redux'
-import { filterCapsules } from '../store/rocketSlice'
+import { filterCapsules } from '../store/capsulesSlice'
 function Filter({ data }) {
   const dispatch = useDispatch()
   var filterAttribute = {

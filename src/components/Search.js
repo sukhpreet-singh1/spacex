@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { disableSearch, enableSearch, searchCapsules } from '../store/rocketSlice'
+import { disableSearch, enableSearch, searchCapsules } from '../store/capsulesSlice'
 function Search() {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')

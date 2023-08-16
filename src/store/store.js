@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
-import rocketSlice from './rocketSlice'
+import capsulesSlice from './capsulesSlice'
 
 export const store = configureStore({
   reducer: {
-    rocketData: rocketSlice,
+    capsulesData: capsulesSlice,
   },
 })
